@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mButton;
     private EditText mResultEditText;
+    private EditText mResultEditText2;
+    private EditText mResultEditText3;
     private TextView mInfoTextView;
 
     @Override
@@ -20,10 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
         mButton = (Button)findViewById(R.id.buttonGetResult);
         mResultEditText = (EditText)findViewById(R.id.editText);
+        mResultEditText2 = (EditText)findViewById(R.id.editText2);
+        mResultEditText3 = (EditText)findViewById(R.id.editText3);
         mInfoTextView = (TextView)findViewById(R.id.textViewInfo);
     }
 
     public void onClick(View view) {
-        mResultEditText.setText("Test");
+        Box catBox = new Box();
+        String valueString1 = mResultEditText.getText().toString(), valueString2 = mResultEditText2.getText().toString(), valueString3 = mResultEditText3.getText().toString();
+        int value1 = Integer.parseInt(valueString1), value2 = Integer.parseInt(valueString2), value3 = Integer.parseInt(valueString3);
+        catBox.setValue(value1, value2, value3);
+
+        mInfoTextView.setText("" + catBox.getValue());
+
     }
 }
