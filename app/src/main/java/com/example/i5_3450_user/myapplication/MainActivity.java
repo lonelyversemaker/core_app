@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         catBox.setValue(value1, value2, value3);
-        mInfoTextView.setText("" + cBox.getValue() + " Вес " + cBox.weight + " Цвет #" + cBox.color);
+        mInfoTextView.setText("" + catBox.getClassName() + " " + hBox.getClassName());
 
     }
 }

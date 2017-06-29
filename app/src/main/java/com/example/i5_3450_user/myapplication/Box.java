@@ -6,11 +6,12 @@ import 	android.util.Log;
  * Created by I5-3450-user on 29.06.2017.
  */
 
-public class Box {
+public class Box implements testInterface{
     int width;
     int height;
     int depth;
     static int count;
+    int inter;
 
     int getValue() {
         return width * height * depth;
@@ -26,6 +27,11 @@ public class Box {
         depth = d;
     }
 
+    @Override
+    public String getClassName() {
+        return "Коробка";
+    }
+
 }
 
 class HeavyBox extends Box {
@@ -37,7 +43,13 @@ class HeavyBox extends Box {
         depth = d;
         weight = m;
     }
+
+    @Override
+    public String getClassName() {
+        return "Тяжелая коробка";
+    }
 }
+
 
 class ColorBox extends HeavyBox {
     int color;
