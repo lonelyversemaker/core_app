@@ -31,9 +31,14 @@ public class MainActivity extends AppCompatActivity {
         Box catBox = new Box();
         String valueString1 = mResultEditText.getText().toString(), valueString2 = mResultEditText2.getText().toString(), valueString3 = mResultEditText3.getText().toString();
         int value1 = Integer.parseInt(valueString1), value2 = Integer.parseInt(valueString2), value3 = Integer.parseInt(valueString3);
-        catBox.setValue(value1, value2, value3);
 
-        mInfoTextView.setText("" + catBox.getValue());
+        HeavyBox hBox = new HeavyBox(2, 3, 4, 5);
+
+        ColorBox cBox = new ColorBox(2, 3, 4, 5, 666);
+
+
+        catBox.setValue(value1, value2, value3);
+        mInfoTextView.setText("" + cBox.getValue() + " Вес " + cBox.weight + " Цвет #" + cBox.color);
 
     }
 }
